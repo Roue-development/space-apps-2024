@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2puwl21wp2e8"]
+
+[ext_resource type="Texture2D" uid="uid://d2myryb3fbeya" path="res://assets/textures/dirt_diff_4k.jpg" id="1_y2gt3"]
+[ext_resource type="Texture2D" uid="uid://bsggiij6rnvje" path="res://assets/textures/dirt_disp_4k.png" id="2_grhgl"]
+[ext_resource type="Script" path="res://scripts/CropCreator.cs" id="3_rc05b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyxtk"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_y2gt3")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_grhgl")
+uv1_scale = Vector3(10, 10, 10)
+uv2_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7fenn"]
+material = SubResource("StandardMaterial3D_gyxtk")
+size = Vector3(100, 1, 100)
+
+[node name="Root" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="floor" type="MeshInstance3D" parent="World"]
+mesh = SubResource("BoxMesh_7fenn")
+
+[node name="sun" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.350207, 0.857017, -0.37799, 0, 0.403545, 0.91496, 0.936672, -0.320426, 0.141325, -50, 30, 0)
+directional_shadow_mode = 0
+directional_shadow_max_distance = 200.0
+sky_mode = 1
+
+[node name="cops" type="Node3D" parent="World"]
+script = ExtResource("3_rc05b")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
+current = true
+fov = 90.0
