@@ -3,7 +3,20 @@ using System;
 
 public partial class Crop : MeshInstance3D
 {
-	int state = 0;
+	int _state = 0;
+	public int state
+	{
+		get
+		{
+			return _state;
+		}
+		set
+		{
+			_state = value;
+			Mesh = meshList[value];
+		}
+	}
+
 	Mesh[] meshList;
 
 	// Called when the node enters the scene tree for the first time.
@@ -14,7 +27,6 @@ public partial class Crop : MeshInstance3D
 	public void initialize(Mesh[] meshes, int state = 0)
 	{
 		meshList = meshes;
-		this.Mesh = meshList[state];
 		this.state = state;
 	}
 

@@ -22,14 +22,17 @@ public partial class CropCreator : Node3D
 	{
 		base._Ready();
 
+		created_crops = new();
+
 		generateCrops();
 	}
 
 	public void generateCrops(int maturity = 0)
 	{
-		int x_amount = 50;
-		int z_amount = 50;
+		int x_amount = (int)(50 / x_offset);
+		int z_amount = (int)(50 / z_offset);
 
+		var randomizer = new Random();
 
 		for (int x = 0; x < x_amount; x++)
 		{
@@ -38,15 +41,15 @@ public partial class CropCreator : Node3D
 			{
 				var z_pos = z * z_offset;
 
-				var obj = new MeshInstance3D();
 				var src = new Crop();
 
-				obj.Mesh = cropMaturity[maturity];
-				obj.SetScript(src);
+				src.initialize(cropMaturity, maturity);
 
-				src.
+				src.Position = new Vector3(x_pos, (float)(y_startPos + randomizer.NextDouble() -0.5), z_pos);
+				src.RotateY((float)(randomizer.NextDouble() * 2.0 * Math.PI));
 
-				AddChild(obj);
+				AddChild(src);
+				created_crops.Add(src);
 			}
 		}
 	}
