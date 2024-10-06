@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2puwl21wp2e8"]
+[gd_scene load_steps=12 format=3 uid="uid://d2puwl21wp2e8"]
 
 [ext_resource type="Texture2D" uid="uid://d2myryb3fbeya" path="res://assets/textures/dirt_diff_4k.jpg" id="1_y2gt3"]
 [ext_resource type="Texture2D" uid="uid://bsggiij6rnvje" path="res://assets/textures/dirt_disp_4k.png" id="2_grhgl"]
 [ext_resource type="Script" path="res://scripts/CropCreator.cs" id="3_rc05b"]
 [ext_resource type="Script" path="res://scripts/AnimHelper.cs" id="4_odem2"]
+[ext_resource type="ArrayMesh" uid="uid://dkywhp72354mv" path="res://assets/3D/processed/base.res" id="4_xyqo2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyxtk"]
 vertex_color_use_as_albedo = true
@@ -16,13 +17,6 @@ uv2_scale = Vector3(10, 10, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_7fenn"]
 material = SubResource("StandardMaterial3D_gyxtk")
 size = Vector3(50, 1, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75176"]
-albedo_color = Color(0.840853, 0.202375, 0.645582, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bqxvy"]
-material = SubResource("StandardMaterial3D_75176")
-size = Vector3(0.3, 1, 0.3)
 
 [sub_resource type="Animation" id="Animation_0buq4"]
 resource_name = "cam anim"
@@ -255,11 +249,15 @@ directional_shadow_mode = 0
 directional_shadow_max_distance = 200.0
 sky_mode = 1
 
-[node name="cops" type="Node3D" parent="World"]
+[node name="cops" type="Node3D" parent="World" node_paths=PackedStringArray("slider", "selectedType")]
 script = ExtResource("3_rc05b")
 x_offset = 0.5
 z_offset = 0.5
-cropMaturity = [SubResource("BoxMesh_bqxvy")]
+cropMaturity_corn = [ExtResource("4_xyqo2"), null, null, null, null]
+cropMaturity_beans = [ExtResource("4_xyqo2"), null, null, null, null]
+cropMaturity_sorgo = [ExtResource("4_xyqo2"), null, null, null, null]
+slider = NodePath("../../CanvasLayer/HSlider")
+selectedType = NodePath("../../CanvasLayer/selector de crops")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0.848048, -0.529919, 0, 0.529919, 0.848048, 1, 3.70694e-08, -2.31635e-08, 25, 15, 50)
@@ -332,16 +330,13 @@ grow_vertical = 0
 text = "Selecciona tiempo"
 
 [node name="selector tipo" type="Label" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -561.0
+offset_left = 15.0
 offset_top = -98.0
-offset_right = -423.0
+offset_right = 153.0
 offset_bottom = -75.0
-grow_horizontal = 2
 grow_vertical = 0
 text = "Selecciona cultivo"
 
@@ -355,4 +350,5 @@ offset_left = 19.592
 offset_top = -58.0
 offset_right = -17.024
 offset_bottom = -30.0
-max_value = 5.0
+min_value = 1.0
+value = 1.0
