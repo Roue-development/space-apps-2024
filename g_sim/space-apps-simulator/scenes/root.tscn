@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2puwl21wp2e8"]
+[gd_scene load_steps=28 format=3 uid="uid://d2puwl21wp2e8"]
 
 [ext_resource type="Texture2D" uid="uid://d2myryb3fbeya" path="res://assets/textures/dirt_diff_4k.jpg" id="1_y2gt3"]
 [ext_resource type="Texture2D" uid="uid://bsggiij6rnvje" path="res://assets/textures/dirt_disp_4k.png" id="2_grhgl"]
@@ -13,6 +13,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bsmsskxbuifbt" path="res://assets/3D/processed/beans2.res" id="10_piiip"]
 [ext_resource type="ArrayMesh" uid="uid://deqeerpmdpoe6" path="res://assets/3D/processed/beans3.res" id="11_yy6ii"]
 [ext_resource type="ArrayMesh" uid="uid://b3joycgrxekmv" path="res://assets/3D/processed/beans4.res" id="12_x6wlq"]
+[ext_resource type="Texture2D" uid="uid://3e1j8tgsj2cq" path="res://assets/textures/water-drops.svg" id="14_s7gy1"]
+[ext_resource type="Texture2D" uid="uid://b7ljr3rrejupq" path="res://assets/textures/humidity-alt.svg" id="15_sap0t"]
+[ext_resource type="Texture2D" uid="uid://xf48t0g6rc6t" path="res://assets/textures/snowfall.svg" id="16_fbprv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyxtk"]
 vertex_color_use_as_albedo = true
@@ -25,6 +28,75 @@ uv2_scale = Vector3(10, 10, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_7fenn"]
 material = SubResource("StandardMaterial3D_gyxtk")
 size = Vector3(50, 1, 50)
+
+[sub_resource type="Animation" id="Animation_lt1vl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.01229, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_0buq4"]
 resource_name = "cam anim"
@@ -167,81 +239,28 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 1)
 }
 
-[sub_resource type="Animation" id="Animation_lt1vl"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1.01229, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(25, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ufhrl"]
 _data = {
 "RESET": SubResource("Animation_lt1vl"),
 "cam anim": SubResource("Animation_0buq4"),
 "cam idle": SubResource("Animation_ackeu")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj0ne"]
+bg_color = Color(0.270588, 0.270588, 0.270588, 0.462745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to5yh"]
+bg_color = Color(0.449117, 0.72969, 0.896103, 1)
+
+[sub_resource type="Theme" id="Theme_kc8mg"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_oj0ne")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_to5yh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpui5"]
+bg_color = Color(0.765149, 0.691762, 0.0784167, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uttg3"]
+bg_color = Color(0.884941, 0.32082, 0.353028, 1)
 
 [node name="Root" type="Node3D"]
 
@@ -259,8 +278,8 @@ sky_mode = 1
 
 [node name="cops" type="Node3D" parent="World" node_paths=PackedStringArray("slider", "selectedType")]
 script = ExtResource("3_rc05b")
-x_offset = 0.5
-z_offset = 0.5
+x_offset = 0.2
+z_offset = 1.0
 cropMaturity_corn = [ExtResource("4_xyqo2"), ExtResource("5_542qo"), ExtResource("6_a5rat"), ExtResource("7_6stcr"), ExtResource("8_n06ug")]
 cropMaturity_beans = [ExtResource("4_xyqo2"), ExtResource("9_0oxax"), ExtResource("10_piiip"), ExtResource("11_yy6ii"), ExtResource("12_x6wlq")]
 cropMaturity_sorgo = [ExtResource("4_xyqo2"), null, null, null, null]
@@ -268,7 +287,7 @@ slider = NodePath("../../CanvasLayer/HSlider")
 selectedType = NodePath("../../CanvasLayer/selector de crops")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.848048, -0.529919, 0, 0.529919, 0.848048, 1, 3.70694e-08, -2.31635e-08, 25, 15, 50)
+transform = Transform3D(-3.61999e-06, 0.848047, -0.52992, 0, 0.52992, 0.848047, 1, 3.06992e-06, -1.91831e-06, 25, 15, 50)
 current = true
 fov = 90.0
 
@@ -337,6 +356,18 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Selecciona tiempo"
 
+[node name="selector tiempo2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -264.0
+offset_top = 7.0
+offset_right = -205.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Latitud"
+
 [node name="selector tipo" type="Label" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
@@ -347,6 +378,17 @@ offset_right = 153.0
 offset_bottom = -75.0
 grow_vertical = 0
 text = "Selecciona cultivo"
+
+[node name="selector tipo2" type="Label" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = 139.0
+offset_right = 162.0
+offset_bottom = 162.0
+grow_vertical = 2
+text = "Altura: 000cm"
 
 [node name="HSlider" type="HSlider" parent="CanvasLayer"]
 anchors_preset = -1
@@ -360,3 +402,266 @@ offset_right = -17.024
 offset_bottom = -30.0
 min_value = 1.0
 value = 1.0
+
+[node name="Water levels" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.513
+anchor_right = 1.0
+anchor_bottom = 0.513
+offset_left = -51.0
+offset_top = -122.424
+offset_right = -23.0
+offset_bottom = 122.576
+theme = SubResource("Theme_kc8mg")
+fill_mode = 3
+
+[node name="Water levels2" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.513
+anchor_bottom = 0.513
+offset_left = 25.0
+offset_top = -125.424
+offset_right = 53.0
+offset_bottom = 119.576
+theme = SubResource("Theme_kc8mg")
+fill_mode = 3
+
+[node name="Water levels2" type="ProgressBar" parent="CanvasLayer/Water levels2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.513
+anchor_bottom = 0.513
+offset_left = 42.0
+offset_top = -125.685
+offset_right = 70.0
+offset_bottom = 119.315
+theme = SubResource("Theme_kc8mg")
+fill_mode = 3
+
+[node name="Humidity level" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.513
+anchor_right = 1.0
+anchor_bottom = 0.513
+offset_left = -86.0
+offset_top = -122.424
+offset_right = -58.0
+offset_bottom = 122.576
+theme = SubResource("Theme_kc8mg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vpui5")
+fill_mode = 3
+
+[node name="Temperature level" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.513
+anchor_right = 1.0
+anchor_bottom = 0.513
+offset_left = -121.0
+offset_top = -121.424
+offset_right = -93.0
+offset_bottom = 123.576
+theme = SubResource("Theme_kc8mg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uttg3")
+fill_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -143.0
+offset_right = -25.0
+offset_bottom = -119.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_s7gy1")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -142.0
+offset_right = -60.0
+offset_bottom = -118.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("15_sap0t")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -141.0
+offset_right = -94.0
+offset_bottom = -117.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("16_fbprv")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = -146.0
+offset_right = 52.0
+offset_bottom = -122.0
+grow_vertical = 2
+texture = ExtResource("16_fbprv")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = -147.0
+offset_right = 91.0
+offset_bottom = -123.0
+grow_vertical = 2
+texture = ExtResource("16_fbprv")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -80.0
+offset_right = -97.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "fecha de inicio"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -81.0
+offset_right = -11.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "de"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -82.0
+offset_right = 84.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "del"
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 1.0
+anchor_right = 0.462
+anchor_bottom = 1.0
+offset_left = -41.224
+offset_top = -86.0
+offset_right = -4.224
+offset_bottom = -51.0
+placeholder_text = "00"
+
+[node name="TextEdit3" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -198.0
+offset_top = 2.0
+offset_right = -9.0
+offset_bottom = 37.0
+placeholder_text = "0.0000"
+
+[node name="selector tiempo3" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -278.0
+offset_top = 46.0
+offset_right = -209.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Longitud"
+
+[node name="TextEdit4" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -198.0
+offset_top = 41.0
+offset_right = -9.0
+offset_bottom = 76.0
+placeholder_text = "0.0000"
+
+[node name="TextEdit2" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 1.0
+anchor_right = 0.462
+anchor_bottom = 1.0
+offset_left = 136.776
+offset_top = -87.0
+offset_right = 183.776
+offset_bottom = -52.0
+placeholder_text = "2000"
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -84.0
+offset_right = 57.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+item_count = 12
+popup/item_0/text = "ene"
+popup/item_1/text = "feb"
+popup/item_1/id = 1
+popup/item_2/text = "mar"
+popup/item_2/id = 2
+popup/item_3/text = "abr"
+popup/item_3/id = 3
+popup/item_4/text = "may"
+popup/item_4/id = 4
+popup/item_5/text = "jun"
+popup/item_5/id = 5
+popup/item_6/text = "jul"
+popup/item_6/id = 6
+popup/item_7/text = "ago"
+popup/item_7/id = 7
+popup/item_8/text = "sep"
+popup/item_8/id = 8
+popup/item_9/text = "oct"
+popup/item_9/id = 9
+popup/item_10/text = "nov"
+popup/item_10/id = 10
+popup/item_11/text = "dic"
+popup/item_11/id = 11
