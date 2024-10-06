@@ -95,7 +95,7 @@ public partial class CropCreator : Node3D
 
 				src.initialize(getSelected(), maturity);
 
-				src.Position = new Vector3(x_pos, (float)(y_startPos + randomizer.NextDouble() - 0.5), z_pos);
+				src.Position = new Vector3(x_pos, (float)(y_startPos + (randomizer.NextDouble() - 0.5) * 0.1), z_pos);
 				src.RotateY((float)(randomizer.NextDouble() * 2.0 * Math.PI));
 
 				AddChild(src);
