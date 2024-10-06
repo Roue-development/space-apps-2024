@@ -33,9 +33,9 @@ public partial class CropCreator : Node3D
 
 		created_crops = new();
 
-		generateCrops();
+		// generateCrops();
 
-		slider.DragEnded += changeSlider;
+		// slider.DragEnded += changeSlider;
 		selectedType.ItemSelected += changeSelectedCrop;
 	}
 

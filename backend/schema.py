@@ -36,7 +36,7 @@ class Returnable(BaseModel):
     '''La info basica sobre la planta'''
 
 class AskFordata(BaseModel):
-    startDate: datetime.date
+    startDate: str
     cropID: int
     latitud: float
     longitude: float
