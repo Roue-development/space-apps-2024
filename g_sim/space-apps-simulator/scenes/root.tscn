@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2puwl21wp2e8"]
+[gd_scene load_steps=16 format=3 uid="uid://d2puwl21wp2e8"]
 
 [ext_resource type="Texture2D" uid="uid://d2myryb3fbeya" path="res://assets/textures/dirt_diff_4k.jpg" id="1_y2gt3"]
 [ext_resource type="Texture2D" uid="uid://bsggiij6rnvje" path="res://assets/textures/dirt_disp_4k.png" id="2_grhgl"]
 [ext_resource type="Script" path="res://scripts/CropCreator.cs" id="3_rc05b"]
+[ext_resource type="Script" path="res://scripts/AnimHelper.cs" id="4_odem2"]
+[ext_resource type="ArrayMesh" uid="uid://dkywhp72354mv" path="res://assets/3D/processed/base.res" id="4_xyqo2"]
+[ext_resource type="ArrayMesh" uid="uid://dmfdxphdibrhd" path="res://assets/3D/processed/corn1.res" id="5_542qo"]
+[ext_resource type="ArrayMesh" uid="uid://dkl1blc4mibie" path="res://assets/3D/processed/corn2.res" id="6_a5rat"]
+[ext_resource type="ArrayMesh" uid="uid://drmwjpv3uu3my" path="res://assets/3D/processed/corn3.res" id="7_6stcr"]
+[ext_resource type="ArrayMesh" uid="uid://b36xsb1fb3jcc" path="res://assets/3D/processed/corn4.res" id="8_n06ug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyxtk"]
 vertex_color_use_as_albedo = true
@@ -14,13 +20,231 @@ uv2_scale = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7fenn"]
 material = SubResource("StandardMaterial3D_gyxtk")
-size = Vector3(100, 1, 100)
+size = Vector3(50, 1, 50)
+
+[sub_resource type="Animation" id="Animation_0buq4"]
+resource_name = "cam anim"
+length = 60.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0, 50, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 15, 30, 45, 60)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 15, 30, 45, 60)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(25, -0.25, 0, 0.25, 0, 50, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 15, 30, 45, 60)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1.01229, -0.25, 0, 0.25, 0, -1.01229, -0.25, 0, 0.25, 0, -1.01229, -0.25, 0, 0.25, 0, -1.01229, -0.25, 0, 0.25, 0, -1.01229, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 15, 30, 45, 60)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1.5708, -0.25, 0, 0.25, 0, 3.14159, -0.25, 0, 0.25, 0, 4.71239, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 15, 30, 45, 60)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 15, 30, 45, 60)
+}
+
+[sub_resource type="Animation" id="Animation_ackeu"]
+resource_name = "cam idle"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(25, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0, 30, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(25, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0, -1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_lt1vl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.01229, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufhrl"]
+_data = {
+"RESET": SubResource("Animation_lt1vl"),
+"cam anim": SubResource("Animation_0buq4"),
+"cam idle": SubResource("Animation_ackeu")
+}
 
 [node name="Root" type="Node3D"]
 
 [node name="World" type="Node3D" parent="."]
 
 [node name="floor" type="MeshInstance3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.5, 25)
 mesh = SubResource("BoxMesh_7fenn")
 
 [node name="sun" type="DirectionalLight3D" parent="World"]
@@ -29,10 +253,106 @@ directional_shadow_mode = 0
 directional_shadow_max_distance = 200.0
 sky_mode = 1
 
-[node name="cops" type="Node3D" parent="World"]
+[node name="cops" type="Node3D" parent="World" node_paths=PackedStringArray("slider", "selectedType")]
 script = ExtResource("3_rc05b")
+x_offset = 0.5
+z_offset = 0.5
+cropMaturity_corn = [ExtResource("4_xyqo2"), ExtResource("5_542qo"), ExtResource("6_a5rat"), ExtResource("7_6stcr"), ExtResource("8_n06ug")]
+cropMaturity_beans = [ExtResource("4_xyqo2"), null, null, null, null]
+cropMaturity_sorgo = [ExtResource("4_xyqo2"), null, null, null, null]
+slider = NodePath("../../CanvasLayer/HSlider")
+selectedType = NodePath("../../CanvasLayer/selector de crops")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
+transform = Transform3D(-4.37114e-08, 0.848048, -0.529919, 0, 0.529919, 0.848048, 1, 3.70694e-08, -2.31635e-08, 25, 15, 50)
 current = true
 fov = 90.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" node_paths=PackedStringArray("view1", "view2")]
+libraries = {
+"": SubResource("AnimationLibrary_ufhrl")
+}
+playback_default_blend_time = 5.0
+script = ExtResource("4_odem2")
+view1 = NodePath("../../CanvasLayer/View1")
+view2 = NodePath("../../CanvasLayer/View2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="View1" type="Button" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 45.0
+offset_right = 58.0
+offset_bottom = 78.0
+button_mask = 5
+text = "1"
+
+[node name="View2" type="Button" parent="CanvasLayer"]
+offset_left = 65.0
+offset_top = 44.0
+offset_right = 111.0
+offset_bottom = 77.0
+text = "2"
+
+[node name="view label" type="Label" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 154.0
+offset_bottom = 35.0
+text = "Vista:"
+
+[node name="selector de crops" type="OptionButton" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.169
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -68.0
+offset_right = -44.688
+offset_bottom = -19.0
+grow_vertical = 0
+selected = 0
+item_count = 3
+popup/item_0/text = "Maiz"
+popup/item_1/text = "Frijol"
+popup/item_1/id = 1
+popup/item_2/text = "Sorgo"
+popup/item_2/id = 2
+
+[node name="selector tiempo" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -106.0
+offset_right = 67.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Selecciona tiempo"
+
+[node name="selector tipo" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -98.0
+offset_right = 153.0
+offset_bottom = -75.0
+grow_vertical = 0
+text = "Selecciona cultivo"
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.279
+anchor_top = 1.0
+anchor_right = 0.737
+anchor_bottom = 1.0
+offset_left = 19.592
+offset_top = -58.0
+offset_right = -17.024
+offset_bottom = -30.0
+min_value = 1.0
+value = 1.0
