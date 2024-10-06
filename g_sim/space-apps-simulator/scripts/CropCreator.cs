@@ -111,7 +111,7 @@ public partial class CropCreator : Node3D
 
 	public void updateCrops(int maturity = 0)
 	{
-		int selectedmaturity = 0;
+		int selectedmaturity;
 
 
 		if (maturity < 20)
@@ -121,10 +121,8 @@ public partial class CropCreator : Node3D
 		else if (maturity < 60)
 			selectedmaturity = 2;
 		else if (maturity < 80)
-			selectedmaturity = 2;
-		else if (maturity < 100)
 			selectedmaturity = 3;
-		else if (maturity == 100)
+		else
 			selectedmaturity = 4;
 
 		foreach (var crop in created_crops)

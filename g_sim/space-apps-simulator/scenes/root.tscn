@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2puwl21wp2e8"]
+[gd_scene load_steps=20 format=3 uid="uid://d2puwl21wp2e8"]
 
 [ext_resource type="Texture2D" uid="uid://d2myryb3fbeya" path="res://assets/textures/dirt_diff_4k.jpg" id="1_y2gt3"]
 [ext_resource type="Texture2D" uid="uid://bsggiij6rnvje" path="res://assets/textures/dirt_disp_4k.png" id="2_grhgl"]
@@ -9,6 +9,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dkl1blc4mibie" path="res://assets/3D/processed/corn2.res" id="6_a5rat"]
 [ext_resource type="ArrayMesh" uid="uid://drmwjpv3uu3my" path="res://assets/3D/processed/corn3.res" id="7_6stcr"]
 [ext_resource type="ArrayMesh" uid="uid://b36xsb1fb3jcc" path="res://assets/3D/processed/corn4.res" id="8_n06ug"]
+[ext_resource type="ArrayMesh" uid="uid://b2f1f5gcvh3bf" path="res://assets/3D/processed/beans1.res" id="9_0oxax"]
+[ext_resource type="ArrayMesh" uid="uid://bsmsskxbuifbt" path="res://assets/3D/processed/beans2.res" id="10_piiip"]
+[ext_resource type="ArrayMesh" uid="uid://deqeerpmdpoe6" path="res://assets/3D/processed/beans3.res" id="11_yy6ii"]
+[ext_resource type="ArrayMesh" uid="uid://b3joycgrxekmv" path="res://assets/3D/processed/beans4.res" id="12_x6wlq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyxtk"]
 vertex_color_use_as_albedo = true
@@ -258,7 +262,7 @@ script = ExtResource("3_rc05b")
 x_offset = 0.5
 z_offset = 0.5
 cropMaturity_corn = [ExtResource("4_xyqo2"), ExtResource("5_542qo"), ExtResource("6_a5rat"), ExtResource("7_6stcr"), ExtResource("8_n06ug")]
-cropMaturity_beans = [ExtResource("4_xyqo2"), null, null, null, null]
+cropMaturity_beans = [ExtResource("4_xyqo2"), ExtResource("9_0oxax"), ExtResource("10_piiip"), ExtResource("11_yy6ii"), ExtResource("12_x6wlq")]
 cropMaturity_sorgo = [ExtResource("4_xyqo2"), null, null, null, null]
 slider = NodePath("../../CanvasLayer/HSlider")
 selectedType = NodePath("../../CanvasLayer/selector de crops")
