@@ -1,0 +1,3 @@
+sx={{ margin: 0, border: 0, padding: 0, height: '10vh', maxWidth: '100%'}}
+
+sx={{ margin: 0, border: 0, padding: 0, bgcolor: '#000000', height: '10vh', maxWidth: '100%', display:'flex', alignItems: 'center'}}
